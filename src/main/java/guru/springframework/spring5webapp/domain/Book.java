@@ -4,18 +4,17 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by jt on 12/22/19.
- */
 @Entity
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
 
     private String title;
     private String isbn;
+
 
     @ManyToOne
     private Publisher publisher;
@@ -39,6 +38,7 @@ public class Book {
 
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
+
     }
 
     public Long getId() {

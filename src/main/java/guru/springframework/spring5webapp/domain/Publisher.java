@@ -1,24 +1,26 @@
 package guru.springframework.spring5webapp.domain;
 
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by jt on 12/23/19.
- */
+
 @Entity
 public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
+
 
     private String name;
     private String addressLine1;
     private String city;
     private String state;
     private String zip;
+
 
     @OneToMany
     @JoinColumn(name = "publisher_id")
@@ -68,6 +70,7 @@ public class Publisher {
 
     public void setId(Long id) {
         this.id = id;
+
     }
 
     public String getName() {
@@ -109,4 +112,5 @@ public class Publisher {
     public void setZip(String zip) {
         this.zip = zip;
     }
+
 }
